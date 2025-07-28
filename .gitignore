@@ -1,0 +1,15 @@
+# ignore the virtual environment directory
+/mybootcampsite/__pycache__/
+# ignore Python bytecode files
+*.pyc
+# ignore Python cache directories
+__pycache__/
+# ignore Django migrations
+mybootcampsite/migrations/
+# ignore SQLite database files
+*.sqlite3
+# ignore static files collected by Django
+mybootcampsite/static/
+
+# Ignore everything in myenv
+myenv/*
