@@ -1,0 +1,14 @@
+<!-- bootcamp_lessons/templates/bootcamp_lessons/lesson_detail.html -->
+{% extends 'bootcamp_lessons/base.html' %}
+
+{% block title %}{{ lesson.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ lesson.title }}</h1>
+    <p><strong>Order:</strong> {{ lesson.order }}</p>
+    <p><strong>Published:</strong> {% if lesson.is_published %}Yes{% else %}No{% endif %}</p> <!-- Display new field -->
+    <p>{{ lesson.description }}</p>
+    <a href="{% url 'lesson_list' %}" class="btn">Back to Lessons</a>
+    <a href="{% url 'lesson_update' pk=lesson.pk %}" class="btn">Edit Lesson</a>
+    <a href="{% url 'lesson_delete' pk=lesson.pk %}" class="btn btn-danger">Delete Lesson</a>
+{% endblock %}

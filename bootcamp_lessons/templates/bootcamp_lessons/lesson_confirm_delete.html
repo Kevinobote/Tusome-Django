@@ -1,0 +1,14 @@
+<!-- bootcamp_lessons/templates/bootcamp_lessons/lesson_confirm_delete.html -->
+{% extends 'bootcamp_lessons/base.html' %}
+
+{% block title %}Delete Lesson{% endblock %}
+
+{% block content %}
+    <h1>Delete Lesson: "{{ lesson.title }}"?</h1>
+    <p>Are you sure you want to delete the lesson titled "{{ lesson.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+        <a href="{% url 'lesson_detail' pk=lesson.pk %}" class="btn" style="background-color: #6c757d;">Cancel</a>
+    </form>
+{% endblock %}

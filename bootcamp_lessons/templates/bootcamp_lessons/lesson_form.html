@@ -1,0 +1,29 @@
+<!-- bootcamp_lessons/templates/bootcamp_lessons/lesson_form.html -->
+{% extends 'bootcamp_lessons/base.html' %}
+
+{% block title %}{{ form_type }} Lesson{% endblock %}
+
+{% block content %}
+    <h1>{{ form_type }} Lesson</h1>
+    <form method="post">
+        {% csrf_token %} <!-- Django security feature -->
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.help_text %}
+                    <small class="text-muted">{{ field.help_text }}</small>
+                {% endif %}
+                {% if field.errors %}
+                    <ul class="errorlist">
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn">{{ form_type }} Lesson</button>
+    </form>
+    <a href="{% url 'lesson_list' %}" class="btn" style="margin-top: 10px; background-color: #6c757d;">Cancel</a>
+{% endblock %}

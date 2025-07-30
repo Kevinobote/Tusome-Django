@@ -16,11 +16,21 @@ web_bootcamp/
 │   ├── wsgi.py             # Web Server Gateway Interface
 │   └── asgi.py             # Asynchronous Server Gateway Interface
 ├── bootcamp_lessons/        # Django app for our learning exercises
-│   ├── models.py           # Database models
+│   ├── models.py           # Database models (Lesson model)
 │   ├── views.py            # View functions/classes
 │   ├── urls.py             # URL patterns for this app
 │   ├── admin.py            # Admin interface configuration
-│   └── migrations/         # Database migration files
+│   ├── forms.py            # Django forms (LessonForm)
+│   ├── migrations/         # Database migration files
+│   └── templates/bootcamp_lessons/  # HTML templates
+│       ├── base.html       # Base layout template
+│       ├── home.html       # Home page
+│       ├── intro.html      # Django introduction
+│       ├── get_started.html # Getting started guide
+│       ├── lesson_list.html # List of all lessons
+│       ├── lesson_detail.html # Individual lesson details
+│       ├── lesson_form.html # Create/update lesson form
+│       └── lesson_confirm_delete.html # Delete confirmation
 ├── myenv/                  # Virtual environment (isolated Python environment)
 ├── db.sqlite3              # SQLite database file
 ├── manage.py               # Django's command-line utility
@@ -99,32 +109,39 @@ python manage.py startapp app_name
 - [x] Understand project structure
 - [x] Create first Django app (bootcamp_lessons)
 
-### Phase 2: Views and URLs (In Progress)
-- [ ] Create simple views
-- [ ] Set up URL routing
-- [ ] Understand HTTP requests and responses
+### Phase 2: Views and URLs ✅
+- [x] Create simple views (home, intro, get_started)
+- [x] Set up URL routing
+- [x] Understand HTTP requests and responses
 
-### Phase 3: Templates
-- [ ] Create HTML templates
-- [ ] Use Django template language
-- [ ] Static files (CSS, JavaScript, images)
+### Phase 3: Templates ✅
+- [x] Create HTML templates
+- [x] Use Django template language
+- [x] Template inheritance with base.html
+- [x] Static CSS styling
 
-### Phase 4: Models and Database
-- [ ] Define models
-- [ ] Database migrations
-- [ ] Django ORM (Object-Relational Mapping)
+### Phase 4: Models and Database ✅
+- [x] Define models (Lesson model)
+- [x] Database migrations
+- [x] Django ORM (Object-Relational Mapping)
 
-### Phase 5: Forms
-- [ ] Create and handle forms
-- [ ] Form validation
-- [ ] CSRF protection
+### Phase 5: Forms ✅
+- [x] Create and handle forms (LessonForm)
+- [x] Form validation
+- [x] CSRF protection
 
-### Phase 6: Admin Interface
-- [ ] Set up Django admin
-- [ ] Customize admin interface
-- [ ] User authentication
+### Phase 6: Admin Interface ✅
+- [x] Set up Django admin
+- [x] Register models with admin
+- [x] Create superuser for admin access
 
-### Phase 7: Advanced Topics
+### Phase 7: CRUD Operations ✅
+- [x] Create lessons (lesson_create view)
+- [x] Read lessons (lesson_list, lesson_detail views)
+- [x] Update lessons (lesson_update view)
+- [x] Delete lessons (lesson_delete view)
+
+### Phase 8: Advanced Topics (Future)
 - [ ] User authentication and authorization
 - [ ] File uploads
 - [ ] Email functionality
@@ -142,12 +159,28 @@ python manage.py startapp app_name
 - The SQLite database (db.sqlite3) is included for development purposes
 - Static files and migrations are ignored in version control as per .gitignore
 
+## Current Features
+
+- **Home Page**: Welcome page with navigation
+- **Django Introduction**: Learn about Django framework
+- **Getting Started Guide**: Step-by-step setup instructions
+- **Lesson Management**: Full CRUD operations for lessons
+- **Admin Interface**: Manage lessons through Django admin
+- **Responsive Design**: Clean, modern styling
+
+## How to Use
+
+1. **View lessons**: Visit `/lessons/` to see all lessons
+2. **Add lessons**: Use `/admin/` to add new lessons
+3. **Edit lessons**: Click edit links on lesson detail pages
+4. **Delete lessons**: Use delete confirmation pages
+
 ## Next Steps
 
-1. Create your first view in `bootcamp_lessons/views.py`
-2. Set up URL routing in `bootcamp_lessons/urls.py`
-3. Create a simple HTML template
-4. Test everything works by running the development server
+- Add user authentication
+- Implement lesson categories
+- Add search functionality
+- Deploy to production server
 
 ---
 
